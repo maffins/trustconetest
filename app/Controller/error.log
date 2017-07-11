@@ -1,0 +1,20 @@
+2016-10-05 19:55:19 Error: Fatal Error (1): Call to a member function subject() on array in [/home/trustjks/public_html/app/Controller/DocumentsController.php, line 269]
+2016-10-05 19:55:19 Error: [InternalErrorException] Internal Server Error
+Request URL: /Documents/bringhardcopy/1
+Stack Trace:
+#0 /home/trustjks/public_html/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/trustjks/...', 269)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/trustjks/...', 269, Array)
+#2 /home/trustjks/public_html/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/trustjks/...', 269, Array)
+#3 /home/trustjks/public_html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-10-05 20:00:00 Error: Fatal Error (1): Call to a member function send() on array in [/home/trustjks/public_html/app/Controller/DocumentsController.php, line 269]
+2016-10-05 20:00:00 Error: [InternalErrorException] Internal Server Error
+Request URL: /Documents/bringhardcopy/1
+Stack Trace:
+#0 /home/trustjks/public_html/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/trustjks/...', 269)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/trustjks/...', 269, Array)
+#2 /home/trustjks/public_html/lib/Cake/Core/App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/trustjks/...', 269, Array)
+#3 /home/trustjks/public_html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
