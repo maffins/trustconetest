@@ -24,7 +24,7 @@
 <?php endforeach; ?>
 	</tbody>
 	</table>
-
+	
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

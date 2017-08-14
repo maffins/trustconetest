@@ -213,7 +213,7 @@
 
                 if($displayed == 0)
                 {
-                    $greeting .= $logged_user['UserType']['name']. " ".$logged_user['fname']." ".$logged_user['sname']." Welcome ";
+                    $greeting .= "Welcome ".$logged_user['fname']." ".$logged_user['sname'];
                 }
 
                 if ($logged_user['user_type_id'] == 21) {
@@ -281,7 +281,6 @@
                      if ($userSession['user_type_id'] == 3 || $userSession['user_type_id'] == 2 ):
                 ?>
                                 <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Council Documents'), array('controller' => 'CounsilorDocuments', 'action' => 'index'), array('escape' => false)); ?> </li>
-                                <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('MAYCO Documents'), array('controller' => 'MaycoDocuments', 'action' => 'index'), array('escape' => false)); ?> </li>
                                <?php endif ; ?>
                               <?php endif ; ?> <!-- /#sidebar-wrapper -->
                            <?php endif; ?>
@@ -294,10 +293,6 @@
 
                                 <?php if (AuthComponent::user()['user_type_id'] == 9):?>
                                 <li><?php echo $this->Html->link('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;'.__('Council Documents'), array('controller' => 'CounsilorDocuments', 'action' => 'index'), array('escape' => false)); ?> </li>
-                                <?php endif?>
-
-                                <?php if($logged_user['id'] == 153):?>
-                                    <li ><?php echo $this->Html->link('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;'.__('Fault list'), array('controller' => 'Faults', 'action' => 'index'), array('escape' => false)); ?></li>
                                 <?php endif?>
                                 <li><a href="/users/logout"><span class="glyphicon glyphicon-user"></span>Logout</a></li>
                             </ul>

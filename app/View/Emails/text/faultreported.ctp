@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Fault Reported); ?></h1>
+				<h1><?php echo __('Fault Reported'); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -13,22 +13,23 @@
 	 Below are the fault details:
 	</p>
 	</div><!-- end row -->
+
 	<table>
 		<tr>
 			<td><b>Fault Name</b></td>
-			<td><?php echo $fault['Fault']['name']?></td>
+			<td><?php echo $faultdetails['Fault']['name'] ?></td>
 		</tr>
 		<tr>
-			<td><b>Date Fault Reported</b></td>
-			<td><?php echo $fault['Fault']['created']?></td>
+			<td><b>Location</b></td>
+			<td><?php echo $faultdetails['Fault']['area']?></td>
+		</tr>
+		<tr>
+			<td><b>Ward Number</b></td>
+			<td><?php echo $faultdetails['Fault']['wardnumber']?></td>
 		</tr>
 		<tr>
 			<td><b>Street name</b></td>
-			<td><?php echo $fault['Fault']['address']?></td>
-		</tr>
-		<tr>
-			<td><b>Town / Township / Ward number / Location</b></td>
-			<td><?php echo $fault['Fault']['area']?></td>
+			<td><?php echo $faultdetails['Fault']['address']?></td>
 		</tr>
 	</table>
 </div>

@@ -19,16 +19,16 @@
 	?>
 
   	<!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/documentstracker.co.za/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/documentstracker.co.za/css/lavish-bootstrap.css">
-  	<link rel="stylesheet" href="/documentstracker.co.za/css/simple-sidebar.css">
-  	<link rel="stylesheet" href="/documentstracker.co.za/css/dta.css">
-    <link href="/documentstracker.co.za/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/app/webroot/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/app/webroot/css/lavish-bootstrap.css">
+  	<link rel="stylesheet" href="/app/webroot/css/simple-sidebar.css">
+  	<link rel="stylesheet" href="/app/webroot/css/dta.css">
+    <link href="/app/webroot/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
   	<!-- Latest compiled and minified JavaScript -->
       <?= $this->Html->script('jquery.min.js') ?>
-      <script src="/documentstracker.co.za/js/jquery.min.js"></script>
-      <script src="/documentstracker.co.za/js/bootstrap.min.js"></script>
+      <script src="/app/webroot/js/jquery.min.js"></script>
+      <script src="/app/webroot/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,9 +37,9 @@
     <![endif]-->
 
 
-      <script src="/documentstracker.co.za/js/moment.js"></script>
-      <script src="/documentstracker.co.za/js/bootstrap-datepicker.min.js"></script>
-      <script src="/documentstracker.co.za/js/jquery.dataTables.js"></script>
+      <script src="/app/webroot/js/moment.js"></script>
+      <script src="/app/webroot/js/bootstrap-datepicker.min.js"></script>
+      <script src="/app/webroot/js/jquery.dataTables.js"></script>
       <style type="text/css">
           body { padding: 70px 0px; }
           .textarea { vertical-align: top; }

@@ -1,0 +1,94 @@
+<div class="counsilorDocuments index">
+	<div class="row">
+		<div class="col-md-12">
+            <h3 style="margin: 0 auto; text-align: center;color: black">COUNCIL MEETINGS DOCUMENTS</h3>
+            <hr style="width: 100%;border-bottom: 2px solid white; margin: 5px 0px 15px 0px !important;" />
+			<table cellpadding="0" cellspacing="0" class="table table-striped" style="background-color: white; width: 1000px; margin: 0 auto">
+                <?php
+                   $mainMeetingArray = [];
+                   $newArrayToLoop   = [];
+                   $arrayToloop      = [];
+
+                    //First buidl the main meeting email.
+                    foreach ($counsilorDocuments as $counsilorDocument)
+                    {
+                        if($counsilorDocument['CounsilorDocument']['meeting'])
+                        {
+                            $mainMeetingArray[$counsilorDocument['CounsilorDocument']['meeting']] = $counsilorDocument['CounsilorDocument']['meeting'];
+                        }
+
+                    }
+
+                    //second build the other mail.
+                    foreach ($mainMeetingArray as $meeting)
+                    {
+                        foreach ($counsilorDocuments as $counsilorDocument)
+                        {
+                            if($counsilorDocument['CounsilorDocument']['meeting'] == $meeting)
+                            {
+                                $arrayToloop[$meeting][] = $counsilorDocument;
+                            }
+
+                        }
+                    }
+
+                $counter = 0;
+                 foreach ($arrayToloop as $key=>$counsilorDocument): ?>
+                <thead>
+                <tr style="background-color: #156F30 !important;color: black">
+                    <td nowrap colspan="5" style="text-align: center; font-size: 20px"><b>COUNCIL MEETING: <?php echo $key; ?></b>&nbsp;</td>
+                </tr>
+				<?php $counter++; ?>
+                <tr>
+                    <th nowrap><?php echo $this->Paginator->sort('Uploaded by'); ?></th>
+                    <th nowrap><?php echo $this->Paginator->sort('document name'); ?></th>
+                    <th nowrap><?php echo $this->Paginator->sort('created'); ?></th>
+                    <th class="actions" <?php if($usertype != 15) :?> style ="display:none" <?php endif;?> ></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($counsilorDocument as $counsilorDocumentT): ?>
+                        <tr style="border: 1px solid #fff862">
+                            <td>
+                                <?php echo $counsilorDocumentT['User']['fname']." ".$counsilorDocumentT['User']['sname'] ?>
+                            </td>
+                            <td nowrap><?php
+                                echo $this->Html->link($counsilorDocumentT['CounsilorDocument']['documentname'], array( 'action' => 'sendFile', $counsilorDocumentT['CounsilorDocument']['id']), array('target' => '_blank'));
+                            ?>&nbsp;</td>
+                            <td nowrap><?php echo substr($counsilorDocumentT['CounsilorDocument']['created'], 0, 10); ?>&nbsp;</td>
+                            <td class="actions" <?php if($usertype != 15) :?> style ="display:none" <?php endif;?> >
+                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>', array('action' => 'view', $counsilorDocumentT['CounsilorDocument']['id']), array('escape' => false)); ?>
+                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $counsilorDocumentT['CounsilorDocument']['id']), array('escape' => false)); ?>
+                                <?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $counsilorDocumentT['CounsilorDocument']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $counsilorDocumentT['CounsilorDocument']['id'])); ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <tr><td colspan="4" style="background-color: #DEE1DD;color: #DEE1DD;border: 0"></td></tr>
+                    <tr><td colspan="4" style="background-color: #DEE1DD;color: #DEE1DD;border: 0"></td></tr>
+                    <tr><td colspan="4" style="background-color: #DEE1DD;color: #DEE1DD;border: 0"></td></tr>
+                <?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<p>
+				<small><?php echo $this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')));?></small>
+			</p>
+
+			<?php
+			$params = $this->Paginator->params();
+			if ($params['pageCount'] > 1) {
+			?>
+			<ul class="pagination pagination-sm">
+				<?php
+					echo $this->Paginator->prev('&larr; Previous', array('class' => 'prev','tag' => 'li','escape' => false), '<a onclick="return false;">&larr; Previous</a>', array('class' => 'prev disabled','tag' => 'li','escape' => false));
+					echo $this->Paginator->numbers(array('separator' => '','tag' => 'li','currentClass' => 'active','currentTag' => 'a'));
+					echo $this->Paginator->next('Next &rarr;', array('class' => 'next','tag' => 'li','escape' => false), '<a onclick="return false;">Next &rarr;</a>', array('class' => 'next disabled','tag' => 'li','escape' => false));
+				?>
+			</ul>
+			<?php } ?>
+
+		</div> <!-- end col md 9 -->
+	</div><!-- end row -->
+
+
+</div><!-- end containing of content -->

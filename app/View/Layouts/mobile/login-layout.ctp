@@ -19,13 +19,13 @@
 	?>
 
   	<!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/documentstracker.co.za/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/documentstracker.co.za/css/lavish-bootstrap.css">
-  	<link rel="stylesheet" href="/documentstracker.co.za/css/simple-sidebar.css">
+    <link rel="stylesheet" href="/app/webroot/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/app/webroot/css/lavish-bootstrap.css">
+  	<link rel="stylesheet" href="/app/webroot/css/simple-sidebar.css">
 
   	<!-- Latest compiled and minified JavaScript -->
-  	<script src="/documentstracker.co.za/js/jquery-1.12.0.min.js"></script>
-  	<script src="/documentstracker.co.za/js/bootstrap.min.js"></script>
+  	<script src="/app/webroot/js/jquery-1.12.0.min.js"></script>
+  	<script src="/app/webroot/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
